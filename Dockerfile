@@ -41,6 +41,7 @@ COPY --from=builder /podinfo/bin/podcli /usr/local/bin/podcli
 COPY ./ui ./ui
 RUN chown -R app:app ./
 
+RUN echo hello
 USER app
 
 CMD ["./podinfo"]
