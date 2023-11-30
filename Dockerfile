@@ -26,9 +26,6 @@ ARG REVISION
 
 LABEL maintainer="stefanprodan"
 
-# test caching
-RUN sleep 90
-
 RUN addgroup -S app \
     && adduser -S -G app app \
     && apk --no-cache add \
