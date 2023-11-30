@@ -4,11 +4,11 @@ RUN mkdir -p /podinfo/
 
 WORKDIR /podinfo
 
+COPY go.mod go.sum .
+RUN go mod download
+
 COPY ./cmd ./cmd
 COPY ./pkg ./pkg
-COPY go.mod go.sum .
-
-RUN go mod download
 
 ARG REVISION
 
