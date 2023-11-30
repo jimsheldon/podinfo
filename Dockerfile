@@ -6,7 +6,9 @@ RUN mkdir -p /podinfo/
 
 WORKDIR /podinfo
 
-COPY . .
+COPY ./cmd ./cmd
+COPY ./pkg ./pkg
+COPY go.mod go.sum .
 
 RUN go mod download
 
@@ -38,7 +40,6 @@ COPY --from=builder /podinfo/bin/podcli /usr/local/bin/podcli
 COPY ./ui ./ui
 RUN chown -R app:app ./
 
-RUN echo hello
 USER app
 
 CMD ["./podinfo"]
