@@ -2,6 +2,8 @@
 #
 # The release version is controlled from pkg/version
 
+# trigger
+
 TAG?=latest
 NAME:=podinfo
 DOCKER_REPOSITORY:=stefanprodan
