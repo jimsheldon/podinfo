@@ -4,7 +4,7 @@ RUN mkdir -p /podinfo/
 
 WORKDIR /podinfo
 
-COPY go.mod go.sum .
+COPY go.mod go.sum ./
 RUN go mod download
 
 COPY ./cmd ./cmd
