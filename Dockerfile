@@ -7,8 +7,7 @@ WORKDIR /podinfo
 COPY go.mod go.sum ./
 RUN go mod download
 
-COPY ./cmd ./cmd
-COPY ./pkg ./pkg
+COPY ./cmd ./pkg ./
 
 ARG REVISION
 
