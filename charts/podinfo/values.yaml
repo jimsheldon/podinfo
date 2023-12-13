@@ -6,7 +6,7 @@ backend: #http://backend-podinfo:9898/echo
 backends: []
 image:
   repository: jimsheldon/podinfo
-  tag: "null"
+  tag: "0.1.19"
   pullPolicy: IfNotPresent
 ui:
   color: "#34577c"
