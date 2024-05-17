@@ -1,0 +1,20 @@
+kind: pipeline
+spec:
+  stages:
+  - type: ci
+    spec:
+      steps:
+      - name: test
+        type: run
+        spec:
+          container: alpine
+          script: |-
+            go test -v ./...
+
+      - name: notify
+        type: plugin
+        when: failure()
+        spec:
+          name: slack
+          inputs:
+            webhook: ${{ secrets.get("slack_webhook") }}
