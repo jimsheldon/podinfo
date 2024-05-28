@@ -1,0 +1,13 @@
+kind: pipeline
+spec:
+  stages:
+  - spec:
+      steps:
+      - name: test
+        spec:
+          container:
+            image: golang:1.22
+          script:
+          - go test -v ./...
+        type: run
+    type: ci
